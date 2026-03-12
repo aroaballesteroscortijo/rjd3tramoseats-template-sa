@@ -2,15 +2,21 @@
 
 -   [Overview](#overview)
 -   [Workflow diagram](#workflow-diagram)
--   [Input files](#input-files)
+-   [Input files](#inputs-files)
 -   [Procedure](#procedure)
-    -   [Block 0 - Starting point](#block-0---starting-point)
+    -   [Block 0 · Starting
+        point](#block-0--starting-point-construir_spec)
     -   [Block 1 - Log-level
         transformation](#block-1---log-level-transformation)
-    -   [Block 2 - ARIMA model
-        identification](#block-2---arima-model-identification)
-    -   [Block 3 - Outlier detection](#block-3---outlier-detection)
-    -   [Block 4 - Calendar effects](#block-4---calendar-effects)
+    -   [Block 1 - R documentation](#block-1---r-documentation)
+    -   [Block 1 - Our application](#block-1---our-application)
+-   [Block 2 · Set Arima Model Identification in Pre-Processing
+    Specification](#block-2---arima-model-identification)
+    -   [Block 2 - R documentation](#block-2---r-documentation)
+    -   [Block 2 - Our application](#block-2---our-application)
+        identification\](#block-2–set-arima-model-identification-in-pre-processing-specification)
+-   [Block 3 · Outlier detection](#block-3--outlier-detection)
+-   [Block 4 · Calendar effects](#block-4--calendar-effects)
 -   [Main reading loop](#main-reading-loop)
 -   [End-of-run summary](#end-of-run-summary)
 
@@ -36,20 +42,29 @@ This template could be change for different purposes
 
 ## Workflow diagram
 
+    Input time series to be seasonally adjusted
+        │
+        ▼
     Excel workbook
         │
-        ├── "Instrucciones" sheet  →  explain instructions
-        ├── "RESUMEN" sheet        →  summary of the models and outliers
+        ├── "Instructions" sheet   → explains the instructions
+        ├── "SUMMARY" sheet        → summarizes the models and outliers
         └── Indicator sheets (AFI, IPI, …)
                 │
-                └── For each row (CCAA)
+                └── For each row (Autonomous Community / CCAA)
                         │
-                        ├── [1] Transformation    set_transform()
-                        ├── [2] ARIMA model       set_automodel() / set_arima()
-                        ├── [3] Outliers          set_outlier() + add_outlier()
-                        ├── [4] Calendar          set_tradingdays() + set_easter()
+                        ├── [1] Transformation    → set_transform()
+                        ├── [2] ARIMA model       → set_automodel() / set_arima()
+                        ├── [3] Outliers          → set_outlier() + add_outlier()
+                        ├── [4] Calendar effects  → set_tradingdays() + set_easter()
                         │
-                        └── tramoseats_spec  →  specs_lista[["CCAA.INDICATOR"]]
+                        └── tramoseats_spec → specs_lista[["CCAA.INDICATOR"]]
+        │
+        ▼
+    Seasonal adjustment
+        │
+        ▼
+    Results displayed in a Shiny app
 
 [Back to table of contents](#table-of-contents)
 
@@ -140,6 +155,23 @@ The relevant columns in each sheet are:
 ------------------------------------------------------------------------
 
 ## Procedure
+
+The main program is **SA\_JDEM3.R** this program read the series to be
+seasonality adjusted, read the specification for the template and
+performs the seasonal adjustment using rjd3tramoseats for all the series
+in the input file.
+
+The auxiliary functions are located inside the file Funciones\_R and
+are:
+
+1.  **leer\_modelos.R**: read the specifications from the template.
+2.  **SA\_procedure**: reads the series and performs the seasonal
+    adjustment using the specifications.
+3.  **Analisis\_SA\_function.R**: reates all the outputs from the
+    adjustment to analyze and display in the Shiny app.
+
+The **app** is a Shiny application used to display the results of the
+seasonal adjustment.
 
 ### **Block 0. Starting point:** `construir_spec()`
 
@@ -236,7 +268,7 @@ automatic options to those defined by the user through the template
 
 ### Block 1 · Set Log-level transformation
 
-#### **R Documentation**
+#### Block 1 - R documentation
 
     set_transform(
       x,
@@ -269,7 +301,7 @@ Modifications of this argument are taken into account only when
 
 **We don´t understand what is this**
 
-##### \*`outliers`\*\*
+##### **`outliers`**
 
 Boolean indicating whether a pre-correction for large outliers (AO and
 LS only) should be applied in the test for the log-level specification
@@ -290,7 +322,7 @@ Considered only when `fun = "Auto"`. Default value is `0.95`.
 
 ------------------------------------------------------------------------
 
-#### **OUR APPLICATION**
+#### Block 1 - Our application
 
 The `transform` column is read and applied via `set_transform()`.
 Accepted values are `"None"`, `"Log"`, and `"Auto"` (the default
@@ -313,7 +345,7 @@ fallback for any unrecognised value).
 
 ### Block 2 · Set Arima Model Identification in Pre-Processing Specification
 
-#### **R Documentation**
+#### Block 2 - R documentation
 
     set_automodel(
       x,
@@ -426,7 +458,7 @@ number of outliers.
 
 ------------------------------------------------------------------------
 
-#### **OUR APPLICATION**
+#### Block 2 - Our application
 
 If `model.auto = TRUE` (the default), automatic model identification is
 enabled via `set_automodel()`. Otherwise, the six ARIMA orders are read
@@ -457,7 +489,7 @@ ARIMA(0,1,1)(0,1,1).
 
 ------------------------------------------------------------------------
 
-### Block 3 · Outlier
+### Block 3 · Outlier detection
 
 #### **R Documentation**
 
@@ -835,7 +867,7 @@ Trading days and Easter are configured separately:
 
 ------------------------------------------------------------------------
 
-## **Main reading loop**
+## Main reading loop
 
 Once `construir_spec()` is defined, the script iterates over all
 indicator sheets. For each sheet the Excel is read (skipping the group
@@ -874,7 +906,7 @@ with other functions in the project.
 
 ------------------------------------------------------------------------
 
-## **End-of-run summary**
+## End-of-run summary
 
 After the loop, a summary is printed showing how many specifications
 were successfully built per indicator and which ones failed:
