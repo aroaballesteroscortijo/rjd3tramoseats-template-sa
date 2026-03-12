@@ -15,7 +15,9 @@
     -   [Block 2 - R documentation](#block-2---r-documentation)
     -   [Block 2 - Our application](#block-2---our-application)
         identification\](#block-2–set-arima-model-identification-in-pre-processing-specification)
--   [Block 3 · Outlier detection](#block-3--outlier-detection)
+-   [Block 3 - Outlier](#block-3---outlier-detection)
+    -   [Block 3 - R documentation](#block-3---r-documentation)
+    -   [Block 3 - Our application](#block-3---our-application)
 -   [Block 4 · Calendar effects](#block-4--calendar-effects)
 -   [Main reading loop](#main-reading-loop)
 -   [End-of-run summary](#end-of-run-summary)
@@ -489,9 +491,9 @@ ARIMA(0,1,1)(0,1,1).
 
 ------------------------------------------------------------------------
 
-### Block 3 · Outlier detection
+### Block 3 · Outlier
 
-#### **R Documentation**
+#### Block 3 - R documentation
 
     set_outlier(
       x,
@@ -567,7 +569,7 @@ intermediate steps. If `TRUE`, exact likelihood estimation is used. If
 
 ------------------------------------------------------------------------
 
-#### **OUR APPLICATION**
+#### Block 3 - Our application
 
 This block has two independent sub-parts: automatic detection and manual
 outlier registration.
