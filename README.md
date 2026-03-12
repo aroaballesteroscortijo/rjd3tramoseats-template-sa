@@ -1,3 +1,20 @@
+## Table of contents
+
+-   [Overview](#overview)
+-   [Workflow diagram](#workflow-diagram)
+-   [Input files](#inputs-files)
+-   [Procedure](#procedure)
+    -   [Block 0 · Starting
+        point](#block-0--starting-point-construir_spec)
+    -   [Block 1 · Log-level
+        transformation](#block-1--set-log-level-transformation)
+    -   [Block 2 · ARIMA model
+        identification](#block-2--set-arima-model-identification-in-pre-processing-specification)
+    -   [Block 3 · Outlier detection](#block-3--outlier-detection)
+    -   [Block 4 · Calendar effects](#block-4--calendar-effects)
+-   [Main reading loop](#main-reading-loop)
+-   [End-of-run summary](#end-of-run-summary)
+
 ------------------------------------------------------------------------
 
 ## **Overview**
@@ -34,6 +51,8 @@ This template could be change for different purposes
                         ├── [4] Calendar          set_tradingdays() + set_easter()
                         │
                         └── tramoseats_spec  →  specs_lista[["CCAA.INDICATOR"]]
+
+[Back to table of contents](#table-of-contents)
 
 ------------------------------------------------------------------------
 
@@ -117,7 +136,7 @@ The relevant columns in each sheet are:
 </tbody>
 </table>
 
-------------------------------------------------------------------------
+## [Back to table of contents](#table-of-contents)
 
 ## **Procedure**
 
@@ -210,7 +229,7 @@ as a starting point.
 The process starts with the **RSA5** specification and changes the
 automatic options to those defined by the user through the template
 
-------------------------------------------------------------------------
+## [Back to table of contents](#table-of-contents)
 
 ### **Block 1 · Set Log-level transformation**
 
@@ -285,7 +304,7 @@ fallback for any unrecognised value).
       spec <- set_transform(spec, fun = fn)
     }
 
-------------------------------------------------------------------------
+## [Back to table of contents](#table-of-contents)
 
 ### **Block 2 · Set Arima Model Identification in Pre-Processing Specification**
 
