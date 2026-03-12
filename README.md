@@ -18,7 +18,9 @@
 -   [Block 3 - Outlier](#block-3---outlier-detection)
     -   [Block 3 - R documentation](#block-3---r-documentation)
     -   [Block 3 - Our application](#block-3---our-application)
--   [Block 4 · Calendar effects](#block-4--calendar-effects)
+-   [Block 4 - Calendar effects](#block-4---calendar-effects)
+    -   [Block 4 - R documentation](#block-4---r-documentation)
+    -   [Block 4 - Our application](#block-4---our-application)
 -   [Main reading loop](#main-reading-loop)
 -   [End-of-run summary](#end-of-run-summary)
 
@@ -565,8 +567,6 @@ for cancellation. Default: `0`.
 intermediate steps. If `TRUE`, exact likelihood estimation is used. If
 `FALSE`, the fast Hannan-Rissanen method is applied.
 
-[Back to table of contents](#table-of-contents)
-
 ------------------------------------------------------------------------
 
 #### Block 3 - Our application
@@ -633,7 +633,7 @@ outlier).
 
 Trading days and Easter are configured separately.
 
-#### **R Documentation**
+#### Block 4 - R documentation
 
     set_tradingdays(
       x,
@@ -808,7 +808,7 @@ entire period (`n`) up to and including Easter Monday
 
 ------------------------------------------------------------------------
 
-#### **OUR APPLICATION**
+#### Block 4 - Our application
 
 #### **1. Automatic mode** (`calendar.auto = TRUE`)
 
