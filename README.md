@@ -191,11 +191,10 @@ are:
 The **app** is a Shiny application used to display the results of the
 seasonal adjustment.
 
-### **Block 0. Starting point:** `construir_spec()`
+### Block 0. Starting point
 
 This function takes one Excel row (as a named list) and the indicator
-name, and returns a fully configured `tramoseats_spec` object. It is
-structured in four blocks.
+name, and returns a fully configured `tramoseats_spec` object.
 
     construir_spec <- function(fila, indicador) {
       ccaa <- as.character(fila[["CCAA"]])
