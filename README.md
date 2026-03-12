@@ -2,22 +2,21 @@
 
 -   [Overview](#overview)
 -   [Workflow diagram](#workflow-diagram)
--   [Input files](#inputs-files)
+-   [Input files](#input-files)
 -   [Procedure](#procedure)
-    -   [Block 0 · Starting
-        point](#block-0--starting-point-construir_spec)
-    -   [Block 1 · Log-level
-        transformation](#block-1--set-log-level-transformation)
-    -   [Block 2 · ARIMA model
-        identification](#block-2--set-arima-model-identification-in-pre-processing-specification)
-    -   [Block 3 · Outlier detection](#block-3--outlier-detection)
-    -   [Block 4 · Calendar effects](#block-4--calendar-effects)
+    -   [Block 0 - Starting point](#block-0---starting-point)
+    -   [Block 1 - Log-level
+        transformation](#block-1---log-level-transformation)
+    -   [Block 2 - ARIMA model
+        identification](#block-2---arima-model-identification)
+    -   [Block 3 - Outlier detection](#block-3---outlier-detection)
+    -   [Block 4 - Calendar effects](#block-4---calendar-effects)
 -   [Main reading loop](#main-reading-loop)
 -   [End-of-run summary](#end-of-run-summary)
 
 ------------------------------------------------------------------------
 
-## **Overview**
+## Overview
 
 This script automates the **reading and construction of seasonal
 adjustment specifications** for multiple time series from a template
@@ -35,7 +34,7 @@ The main workflow is:
 
 This template could be change for different purposes
 
-## **Workflow diagram**
+## Workflow diagram
 
     Excel workbook
         │
@@ -56,7 +55,7 @@ This template could be change for different purposes
 
 ------------------------------------------------------------------------
 
-## **Inputs files**
+## Inputs files
 
 **Data series**
 
@@ -140,7 +139,7 @@ The relevant columns in each sheet are:
 
 ------------------------------------------------------------------------
 
-## **Procedure**
+## Procedure
 
 ### **Block 0. Starting point:** `construir_spec()`
 
@@ -235,7 +234,7 @@ automatic options to those defined by the user through the template
 
 ------------------------------------------------------------------------
 
-### **Block 1 · Set Log-level transformation**
+### Block 1 · Set Log-level transformation
 
 #### **R Documentation**
 
@@ -270,7 +269,7 @@ Modifications of this argument are taken into account only when
 
 **We don´t understand what is this**
 
-##### **`outliers`**
+##### \*`outliers`\*\*
 
 Boolean indicating whether a pre-correction for large outliers (AO and
 LS only) should be applied in the test for the log-level specification
@@ -288,8 +287,6 @@ selection is chosen. Considered only when `fun = "Auto"`. Default: `-2`.
 log/level pre-test: - `fct > 1` favours levels - `fct < 1` favours logs
 
 Considered only when `fun = "Auto"`. Default value is `0.95`.
-
-\[
 
 ------------------------------------------------------------------------
 
@@ -314,7 +311,7 @@ fallback for any unrecognised value).
 
 ------------------------------------------------------------------------
 
-### **Block 2 · Set Arima Model Identification in Pre-Processing Specification**
+### Block 2 · Set Arima Model Identification in Pre-Processing Specification
 
 #### **R Documentation**
 
@@ -460,7 +457,7 @@ ARIMA(0,1,1)(0,1,1).
 
 ------------------------------------------------------------------------
 
-### **Block 3 · Outlier detection**
+### Block 3 · Outlier
 
 #### **R Documentation**
 
@@ -598,7 +595,7 @@ outlier).
 
 ------------------------------------------------------------------------
 
-### **Block 4 · Calendar effects**
+### Block 4 · Calendar effects
 
 Trading days and Easter are configured separately.
 
