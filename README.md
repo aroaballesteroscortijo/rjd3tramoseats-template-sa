@@ -7,10 +7,10 @@
 -   [Procedure](#procedure)
     -   [Block 0 - Starting point](#block-0---starting-point)
     -   [Block 1 - Set Log-level
-        transformation](#block-1---log-level-transformation)
+        transformation](#block-1---set-log-level-transformation)
         -   [Block 1 - R documentation](#block-1---r-documentation)
         -   [Block 1 - Our application](#block-1---our-application)
-    -   [Block 2 - Set ARIMA model](#block-2---arima-model)
+    -   [Block 2 - Set ARIMA model](#block-2---set-arima-model)
         -   [Block 2 - R documentation](#block-2---r-documentation)
         -   [Block 2 - Our application](#block-2---our-application)
     -   [Block 3 - Outlier](#block-3---outlier)
@@ -188,7 +188,7 @@ are:
 The **app** is a Shiny application used to display the results of the
 seasonal adjustment.
 
-### Block 0. Starting point
+### Block 0 - Starting point
 
 This function takes one Excel row (as a named list) and the indicator
 name, and returns a fully configured `tramoseats_spec` object.
