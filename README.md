@@ -11,11 +11,11 @@
         transformation](#block-1---log-level-transformation)
         -   [Block 1 - R documentation](#block-1---r-documentation)
         -   [Block 1 - Our application](#block-1---our-application)
--   [Block 2 · Set Arima Model Identification in Pre-Processing
-    Specification](#block-2---arima-model-identification)
-    -   [Block 2 - R documentation](#block-2---r-documentation)
-    -   [Block 2 - Our application](#block-2---our-application)
-        identification\](#block-2–set-arima-model-identification-in-pre-processing-specification)
+    -   [Block 2 · Set Arima
+        Model](#block-2---arima-model-identification)
+        -   [Block 2 - R documentation](#block-2---r-documentation)
+        -   [Block 2 - Our application](#block-2---our-application)
+            identification\](#block-2–set-arima-model-identification-in-pre-processing-specification)
 -   [Block 3 - Outlier](#block-3---outlier-detection)
     -   [Block 3 - R documentation](#block-3---r-documentation)
     -   [Block 3 - Our application](#block-3---our-application)
@@ -361,7 +361,7 @@ fallback for any unrecognised value).
 
 ------------------------------------------------------------------------
 
-### Block 2 · Set Arima Model Identification in Pre-Processing Specification
+### Block 2 · Set Arima Model
 
 #### Block 2 - R documentation
 
