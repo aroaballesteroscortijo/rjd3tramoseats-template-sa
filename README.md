@@ -2,26 +2,23 @@
 
 -   [Overview](#overview)
 -   [Workflow diagram](#workflow-diagram)
--   [Input files](#inputs-files)
--   [Output files](#outputs-files)
+-   [Input files](#input-files)
+-   [Output files](#output-files)
 -   [Procedure](#procedure)
-    -   [Block 0 · Starting
-        point](#block-0--starting-point-construir_spec)
-    -   [Block 1 - Log-level
+    -   [Block 0 - Starting point](#block-0---starting-point)
+    -   [Block 1 - Set Log-level
         transformation](#block-1---log-level-transformation)
         -   [Block 1 - R documentation](#block-1---r-documentation)
         -   [Block 1 - Our application](#block-1---our-application)
-    -   [Block 2 · Set Arima
-        Model](#block-2---arima-model-identification)
+    -   [Block 2 - Set ARIMA model](#block-2---arima-model)
         -   [Block 2 - R documentation](#block-2---r-documentation)
         -   [Block 2 - Our application](#block-2---our-application)
-            identification\](#block-2–set-arima-model-identification-in-pre-processing-specification)
--   [Block 3 - Outlier](#block-3---outlier-detection)
-    -   [Block 3 - R documentation](#block-3---r-documentation)
-    -   [Block 3 - Our application](#block-3---our-application)
--   [Block 4 - Calendar effects](#block-4---calendar-effects)
-    -   [Block 4 - R documentation](#block-4---r-documentation)
-    -   [Block 4 - Our application](#block-4---our-application)
+    -   [Block 3 - Outlier](#block-3---outlier)
+        -   [Block 3 - R documentation](#block-3---r-documentation)
+        -   [Block 3 - Our application](#block-3---our-application)
+    -   [Block 4 - Calendar effects](#block-4---calendar-effects)
+        -   [Block 4 - R documentation](#block-4---r-documentation)
+        -   [Block 4 - Our application](#block-4---our-application)
 
 ------------------------------------------------------------------------
 
@@ -283,7 +280,7 @@ automatic options to those defined by the user through the template
 
 ------------------------------------------------------------------------
 
-### Block 1 · Set Log-level transformation
+### Block 1 - Set Log-level transformation
 
 #### Block 1 - R documentation
 
@@ -360,7 +357,7 @@ fallback for any unrecognised value).
 
 ------------------------------------------------------------------------
 
-### Block 2 · Set Arima Model
+### Block 2 - Set ARIMA model
 
 #### Block 2 - R documentation
 
@@ -506,7 +503,7 @@ ARIMA(0,1,1)(0,1,1).
 
 ------------------------------------------------------------------------
 
-### Block 3 · Outlier
+### Block 3 - Outlier
 
 #### Block 3 - R documentation
 
@@ -642,7 +639,7 @@ outlier).
 
 ------------------------------------------------------------------------
 
-### Block 4 · Calendar effects
+### Block 4 - Calendar effects
 
 Trading days and Easter are configured separately.
 
