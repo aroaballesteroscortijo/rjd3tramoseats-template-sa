@@ -3,6 +3,7 @@
 -   [Overview](#overview)
 -   [Workflow diagram](#workflow-diagram)
 -   [Input files](#inputs-files)
+-   [Output files](#outputs-files)
 -   [Procedure](#procedure)
     -   [Block 0 · Starting
         point](#block-0--starting-point-construir_spec)
@@ -44,10 +45,10 @@ This template could be change for different purposes
 
 ## Workflow diagram
 
-    Input time series to be seasonally adjusted
+    Input time series to be seasonally adjusted. Excel workbook
         │
         ▼
-    Excel workbook
+    Excel workbook with the specification
         │
         ├── "Instructions" sheet   → explains the instructions
         ├── "SUMMARY" sheet        → summarizes the models and outliers
@@ -72,7 +73,7 @@ This template could be change for different purposes
 
 ------------------------------------------------------------------------
 
-## Inputs files
+## Input files
 
 **Data series**
 
@@ -151,6 +152,21 @@ The relevant columns in each sheet are:
 </tr>
 </tbody>
 </table>
+
+[Back to table of contents](#table-of-contents)
+
+------------------------------------------------------------------------
+
+## Output files
+
+We created two output summary excel and RData file to use in the Shiny
+app and the seasonally adjustes series. All the ouutput files are in the
+file Datos\_salida.
+
+1.  resumen\_sa\_CCAA.xlsx: summary by region
+2.  resumen\_sa\_indicador.xlsx: summary by indicator
+3.  series\_SA\_CCAA.xlsx: finalseasonally adjusted series
+4.  Salida\_des.RData. Outputs from rjd3 used in the Shiny app.
 
 [Back to table of contents](#table-of-contents)
 
