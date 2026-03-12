@@ -136,7 +136,9 @@ The relevant columns in each sheet are:
 </tbody>
 </table>
 
-## [Back to table of contents](#table-of-contents)
+[Back to table of contents](#table-of-contents)
+
+------------------------------------------------------------------------
 
 ## **Procedure**
 
@@ -229,7 +231,9 @@ as a starting point.
 The process starts with the **RSA5** specification and changes the
 automatic options to those defined by the user through the template
 
-## [Back to table of contents](#table-of-contents)
+[Back to table of contents](#table-of-contents)
+
+------------------------------------------------------------------------
 
 ### **Block 1 · Set Log-level transformation**
 
@@ -285,6 +289,8 @@ log/level pre-test: - `fct > 1` favours levels - `fct < 1` favours logs
 
 Considered only when `fun = "Auto"`. Default value is `0.95`.
 
+\[
+
 ------------------------------------------------------------------------
 
 #### **OUR APPLICATION**
@@ -304,7 +310,9 @@ fallback for any unrecognised value).
       spec <- set_transform(spec, fun = fn)
     }
 
-## [Back to table of contents](#table-of-contents)
+[Back to table of contents](#table-of-contents)
+
+------------------------------------------------------------------------
 
 ### **Block 2 · Set Arima Model Identification in Pre-Processing Specification**
 
@@ -448,6 +456,8 @@ ARIMA(0,1,1)(0,1,1).
                         coef.type = "Undefined")
     }
 
+[Back to table of contents](#table-of-contents)
+
 ------------------------------------------------------------------------
 
 ### **Block 3 · Outlier detection**
@@ -524,6 +534,8 @@ for cancellation. Default: `0`.
 intermediate steps. If `TRUE`, exact likelihood estimation is used. If
 `FALSE`, the fast Hannan-Rissanen method is applied.
 
+[Back to table of contents](#table-of-contents)
+
 ------------------------------------------------------------------------
 
 #### **OUR APPLICATION**
@@ -581,6 +593,8 @@ outlier).
         spec <- add_outlier(spec, type = toupper(tipo), date = fecha)
       }
     }
+
+[Back to table of contents](#table-of-contents)
 
 ------------------------------------------------------------------------
 
@@ -820,6 +834,8 @@ Trading days and Easter are configured separately:
       spec <- set_easter(spec)
     }
 
+[Back to table of contents](#table-of-contents)
+
 ------------------------------------------------------------------------
 
 ## **Main reading loop**
@@ -882,3 +898,5 @@ Example console output:
       TOTAL  OK: 55  |  ERROR: 2
 
 ------------------------------------------------------------------------
+
+[Back to table of contents](#table-of-contents)
