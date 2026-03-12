@@ -8,8 +8,8 @@
         point](#block-0--starting-point-construir_spec)
     -   [Block 1 - Log-level
         transformation](#block-1---log-level-transformation)
-    -   [Block 1 - R documentation](#block-1---r-documentation)
-    -   [Block 1 - Our application](#block-1---our-application)
+        -   [Block 1 - R documentation](#block-1---r-documentation)
+        -   [Block 1 - Our application](#block-1---our-application)
 -   [Block 2 · Set Arima Model Identification in Pre-Processing
     Specification](#block-2---arima-model-identification)
     -   [Block 2 - R documentation](#block-2---r-documentation)
