@@ -24,21 +24,21 @@
 
 ## Overview
 
-This script automates the **reading and construction of seasonal
-adjustment specifications** for multiple time series from a template
-organised by indicator (Excel sheet) and Spanish autonomous community
-(CCAA). Each specification follows the TRAMO-SEATS method as implemented
-in the `rjd3tramoseats` package.
+This process **automates the reading and construction of seasonal
+adjustment specifications** for indicators of the Spanish autonomous
+communities (CCAA).. Each specification follows the TRAMO-SEATS method
+as implemented in the `rjd3tramoseats` package.
 
 The main workflow is:
 
-1.  Read an Excel workbook with one sheet per indicator
-2.  For each row (= CCAA × indicator combination), build a parameterised
-    `tramoseats_spec`
-3.  Store the specifications in a named list (`specs_lista`) for later
-    use in seasonal adjustment
-
-This template could be change for different purposes
+1.  Read an Excel workbook containing the series to be seasonally
+    adjusted.
+2.  Read the seasonal adjustment specifications from an Excel template.
+    This template could be change for different purposes
+3.  Perform the seasonal adjustment.
+4.  Display the final adjusted series, diagnostic tests, intermediate
+    results, and graphs comparing the original and adjusted series, as
+    well as the residuals, in a Shiny app..
 
 ## Workflow diagram
 
